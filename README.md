@@ -9,6 +9,10 @@ Leo is a study assistant built from four CrewAI agents. You pick a topic, and th
 
 Both share the same agents, tasks, prompts and memory.
 
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
 ## Demo
 
 [Watch the demo video](https://drive.google.com/file/d/18Q9CxIxoq8jPpShoB4YTsE8zK6RGvCWN/view?usp=sharing)
