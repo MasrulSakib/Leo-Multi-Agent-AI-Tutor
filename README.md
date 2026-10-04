@@ -9,14 +9,20 @@ Leo is a study assistant built from four CrewAI agents. You pick a topic, and th
 
 Both share the same agents, tasks, prompts and memory.
 
+## Demo
+
+[Watch the demo video](https://drive.google.com/file/d/18Q9CxIxoq8jPpShoB4YTsE8zK6RGvCWN/view?usp=sharing)
+
+It shows one full session in the Streamlit app: picking a topic, the Coordinator's plan going to the Explainer, a follow-up question, the quiz, the Evaluator's feedback, and the re-teach round for weak answers.
+
 ## The agents
 
-| Agent | What it does | Output |
-|---|---|---|
+| Agent       | What it does                                                                                       | Output                               |
+| ----------- | -------------------------------------------------------------------------------------------------- | ------------------------------------ |
 | Coordinator | Reads your request, asks a question if it's unclear, makes the study plan, and wraps up at the end | `Plan` (structured), goodbye message |
-| Explainer | Teaches the topic, answers follow-up questions, and re-teaches weak spots | Plain-text lessons |
-| Quiz Master | Writes short-answer questions from the lesson, each with an ideal answer | `Quiz` (structured) |
-| Evaluator | Compares your answers with the ideal ones and gives feedback | `Evaluation` (structured) |
+| Explainer   | Teaches the topic, answers follow-up questions, and re-teaches weak spots                          | Plain-text lessons                   |
+| Quiz Master | Writes short-answer questions from the lesson, each with an ideal answer                           | `Quiz` (structured)                  |
+| Evaluator   | Compares your answers with the ideal ones and gives feedback                                       | `Evaluation` (structured)            |
 
 Every agent has its own role, goal and backstory in `prompts.py`, along with a task template for each step it handles.
 
@@ -66,12 +72,12 @@ On the first run Leo creates `student_memory.json` (it isn't committed). It keep
 ## How to run
 
 ```bash
-git clone <your-repo-url>
-cd <your-repo-folder>
+git clone https://github.com/MasrulSakib/Leo-Multi-Agent-AI-Tutor.git
+cd Leo-Multi-Agent-AI-Tutor
 python -m venv .venv
-source venv/bin/activate        # Windows: .venv\Scripts\activate
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-cp .env.example .env            # then paste your free API key into .env
+cp .env.example .env
 
 streamlit run app.py            # web interface (recommended)
 python main.py                  # or the terminal version
